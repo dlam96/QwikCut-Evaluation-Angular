@@ -1,0 +1,9 @@
+.banner {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.viddimensions {
+  width: 50%;
+  height: auto;
+}

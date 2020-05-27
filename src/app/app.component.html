@@ -1,23 +1,41 @@
 <!--The content below is only a placeholder and should be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="https://qwikbox.s3.amazonaws.com/qwikcut-store-listing-logo.png">
+<div style="text-align: center;">
+  <h1>Welcome to {{ title }}!</h1>
+  <img
+    width="300"
+    alt="Angular Logo"
+    src="https://qwikbox.s3.amazonaws.com/qwikcut-store-listing-logo.png"
+  />
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://qwikcut.com">QwikCut Website</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="banner">
+  <div class="row">
+    <div
+      class="col-6 mx-auto bg-primary text-white"
+      style="padding: 3% 0 3% 0;"
+    >
+      <h1>Info:</h1>
+      <p>Clip#: {{ clips[count].clipnumber }}</p>
+      <p>Personnel: {{ clips[count].personnel }}</p>
+      <p>
+        Down: {{ clips[count].down }} Distance:
+        {{ clips[count].distance }}
+      </p>
 
+      <button (click)="decrementCnt()" class="btn btn-danger">
+        Prev
+      </button>
+      <button (click)="incrementCnt()" class="btn btn-success">
+        Next
+      </button>
+    </div>
+  </div>
+  <video
+    class="viddimensions"
+    controls
+    (click)="toggleVideo()"
+    on-ended="onEnd()"
+    #videoplayer
+  >
+    <source src="{{ clips[count].url }}" />
+  </video>
+</div>
